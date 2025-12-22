@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #050B1E;
+  font-feature-settings: "ss01" on, "cv02" on, "cv03" on;
+  letter-spacing: -0.01em;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: rgba(0, 229, 255, 0.25);
+}
+
+a, button, input, textarea, select {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  box-shadow: 0 0 0 4px rgba(0, 229, 255, 0.25);
+  border-radius: 12px;
+}
+
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.gradient-border {
+  position: relative;
+}
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 18px;
+  padding: 1px;
+  background: linear-gradient(120deg, rgba(0,229,255,0.7), rgba(124,255,0,0.55), rgba(123,45,141,0.6));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+.noise {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.15'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}
+
+
+/* Animated gradient sweep */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes sheen {
+  0% { transform: translateX(-120%); opacity: 0; }
+  25% { opacity: 0.55; }
+  60% { opacity: 0.25; }
+  100% { transform: translateX(140%); opacity: 0; }
+}
+
+.gradient-animated {
+  background-size: 220% 220%;
+  animation: gradientShift 10s ease-in-out infinite;
+}
+
+.hover-lift {
+  will-change: transform;
+  transition: transform 240ms cubic-bezier(.22,1,.36,1), box-shadow 240ms cubic-bezier(.22,1,.36,1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+}
+
+
+.glass-animate{
+  transition: transform 220ms ease, box-shadow 220ms ease;
+  will-change: transform;
+}
+.glass-animate:hover{
+  transform: translateY(-6px);
+}
+
+
+@layer components {
+  .tile {
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+    transition: transform 240ms ease, background 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+  }
+  .tile:hover {
+    box-shadow: 0 18px 50px rgba(0,0,0,0.35);
+    transform: translateY(-3px);
+    background: rgba(255,255,255,0.055);
+    border-color: rgba(255,255,255,0.16);
+  }
+  .tile::before {
+    content: "";
+    position: absolute;
+    inset: -40% -60%;
+    background: radial-gradient(circle at 30% 20%, rgba(0,229,255,0.18), transparent 55%),
+                radial-gradient(circle at 70% 80%, rgba(124,255,0,0.12), transparent 55%),
+                linear-gradient(120deg, transparent, rgba(255,255,255,0.06), transparent);
+    transform: translateX(-18%);
+    opacity: 0;
+    transition: opacity 240ms ease;
+    pointer-events: none;
+  }
+  .tile:hover::before { opacity: 1; }
+  .tile:active { transform: translateY(-1px) scale(0.99); }
+  .tile-inner { position: relative; z-index: 1; }
+  .tile-pressable { cursor: pointer; }
+  .tile-muted { color: rgba(255,255,255,0.72); }
+  .tile-title { color: rgba(255,255,255,0.92); font-weight: 600; letter-spacing: -0.01em; }
+  .tile-sub { color: rgba(255,255,255,0.55); font-size: 0.85rem; }
+}
+
+
+.font-display{font-family:var(--font-montserrat),ui-sans-serif,system-ui;}
+
+
+h1,h2,h3{letter-spacing:-0.02em;}
+
+
+.chip{display:inline-flex;align-items:center;border-radius:9999px;padding:0.35rem 0.65rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.72);font-size:0.75rem;line-height:1;}
+.chip:hover{background:rgba(255,255,255,0.08);}
