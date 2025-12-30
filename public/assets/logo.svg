@@ -1,0 +1,5 @@
+<svg width="220" height="48" viewBox="0 0 220 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1" y="1" width="46" height="46" rx="14" fill="#050B1E" stroke="rgba(255,255,255,0.18)"/>
+  <path d="M16 34V14h4.2v7.8h8.6V14H33v20h-4.2v-8.2h-8.6V34H16z" fill="#FFFFFF" fill-opacity="0.9"/>
+  <text x="60" y="32" font-family="Montserrat, Arial" font-size="22" letter-spacing="2" fill="#FFFFFF" fill-opacity="0.92">HYDRORA</text>
+</svg>
