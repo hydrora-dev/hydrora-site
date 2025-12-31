@@ -1,0 +1,18 @@
+<svg width="210" height="210" viewBox="0 0 210 210" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="podrim" x1="36" y1="44" x2="176" y2="168" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="rgba(255,255,255,0.14)"/>
+      <stop offset="0.55" stop-color="rgba(255,255,255,0.04)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0.10)"/>
+    </linearGradient>
+    <filter id="podshadow" x="-30" y="-30" width="270" height="270" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="14" flood-color="rgba(0,0,0,0.55)"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#podshadow)">
+    <path d="M72 44H138C156.225 44 171 58.7746 171 77V133C171 151.225 156.225 166 138 166H72C53.7746 166 39 151.225 39 133V77C39 58.7746 53.7746 44 72 44Z" fill="#02040B"/>
+    <path d="M76 56H134C147.807 56 159 67.1929 159 81V129C159 142.807 147.807 154 134 154H76C62.1929 154 51 142.807 51 129V81C51 67.1929 62.1929 56 76 56Z" fill="url(#podrim)" opacity="0.32"/>
+    <path d="M66 96H144" stroke="rgba(255,255,255,0.08)" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

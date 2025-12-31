@@ -1,0 +1,25 @@
+<svg width="260" height="420" viewBox="0 0 260 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="rim" x1="40" y1="30" x2="220" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="rgba(255,255,255,0.18)"/>
+      <stop offset="0.35" stop-color="rgba(255,255,255,0.06)"/>
+      <stop offset="1" stop-color="rgba(255,255,255,0.10)"/>
+    </linearGradient>
+    <filter id="shadow" x="-40" y="-40" width="340" height="500" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="24" stdDeviation="18" flood-color="rgba(0,0,0,0.55)"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <!-- cap -->
+    <path d="M98 38C98 27.954 106.954 19 117 19H143C153.046 19 162 27.954 162 38V60H98V38Z" fill="#040712"/>
+    <path d="M102 42C102 34.82 108.82 28 116 28H144C151.18 28 158 34.82 158 42V56H102V42Z" fill="url(#rim)" opacity="0.55"/>
+    <!-- neck -->
+    <path d="M88 60H172V98C172 112.912 160.912 125 146 125H114C99.0883 125 88 112.912 88 98V60Z" fill="#050A17"/>
+    <!-- body -->
+    <path d="M72 128C72 107.013 88.0132 90 109 90H151C171.987 90 188 107.013 188 128V350C188 380.928 162.928 406 132 406C101.072 406 76 380.928 76 350V128H72Z" fill="#02040B"/>
+    <path d="M84 140C84 122.327 98.3269 108 116 108H144C161.673 108 176 122.327 176 140V344C176 368.853 155.853 389 131 389C106.147 389 86 368.853 86 344V140H84Z" fill="url(#rim)" opacity="0.26"/>
+    <!-- base -->
+    <path d="M76 350C76 380.928 101.072 406 132 406C162.928 406 188 380.928 188 350V334H76V350Z" fill="#040712"/>
+  </g>
+</svg>
