@@ -84,6 +84,12 @@ export type OutboxRow = {
   status?: "sent" | "queued" | "failed";
   error?: string | null;
 };
+export type OutboxStatus = "sent" | "queued" | "failed";
+
+function toOutboxStatus(v: unknown): OutboxStatus | undefined {
+  return v === "sent" || v === "queued" || v === "failed" ? v : undefined;
+}
+
 
 function hasSupabase() {
   return Boolean(getSupabaseAdmin());
@@ -280,7 +286,7 @@ export async function listOutbox(limit = 250): Promise<OutboxRow[]> {
       subject: String(r.subject),
       payload: r.payload,
       created_at: String(r.created_at),
-      status: r.status ? String(r.status) : undefined,
+      status: toOutboxStatus(r.status),
       error: r.error ? String(r.error) : null
     }));
   }
