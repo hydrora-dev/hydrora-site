@@ -24,7 +24,7 @@ export default function ContactPage() {
               />
 
               <div className="grid gap-3 sm:grid-cols-2">
-                <Info title="Email" body="hello@hydrora.example (placeholder)" />
+                <Info title="Email" body="support@hydrora.co.uk" />
                 <Info title="Social" body="Instagram · LinkedIn · X (see footer)" />
                 <Info title="Based in" body="United Kingdom" />
                 <Info title="Availability" body="Pre-launch, limited support hours" />
